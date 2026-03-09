@@ -518,13 +518,32 @@
     <div class="container">
       © <span id="year"></span> Nicholas Chand. Built as a personal portfolio website.
     </div>
-  </footer>
+  <footer>
+  <div class="container">
+    © <span id="year"></span> Nicholas Chand. Built as a personal portfolio website.
+    <br><br>
+    👀 Visitors: <span id="visitor-count">Loading...</span>
+  </div>
+</footer>
 
-  <script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Visitor counter using CountAPI
+  fetch('https://api.countapi.xyz/hit/nicholaschand-portfolio/visits')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("visitor-count").innerText = data.value;
+    })
+    .catch(() => {
+      document.getElementById("visitor-count").innerText = "Unavailable";
+    });
+</script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
 
 
 
