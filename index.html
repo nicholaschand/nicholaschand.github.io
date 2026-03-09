@@ -525,24 +525,11 @@
     👀 Visitors: <span id="visitor-count">Loading...</span>
   </div>
 </footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Visitor counter using CountAPI
-  fetch('https://api.countapi.xyz/hit/nicholaschand-portfolio/visits')
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById("visitor-count").innerText = data.value;
-    })
-    .catch(() => {
-      document.getElementById("visitor-count").innerText = "Unavailable";
-    });
-</script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
 
 
 
